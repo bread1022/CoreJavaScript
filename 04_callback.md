@@ -14,3 +14,39 @@
 2. 파라미터로 함수명만 전달
 3. 변수(전역,지역)를 콜백함수의 파라미터로 전달가능하다
 
+```js
+function 함수1(parameter_함수) {
+  //함수의 파라미터로 함수를 넣어, 비동기 작업이 가능
+	parameter_함수();
+}
+
+함수1( function() {	console.log(2);} );
+```
+
+```js
+function 함수1(parameter_함수) {
+	parameter_함수();
+}
+
+function second() {
+	console.log(2);
+};
+
+함수1(second);
+```
+
+```js
+function 함수1(parameter_함수) {
+	console.log(1);
+  //1 출력 후, 함수 실행하고 싶을 때 인자에 원하는 함수를 넣는다
+	parameter_함수();
+}
+
+function second() {
+	console.log(2);
+};
+
+함수1(second);
+```
+
+### 콜백함수 예제
