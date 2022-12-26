@@ -29,7 +29,6 @@ b = 4;
 console.log(a, window.a, this.a);  // 3 3 3
 console.log(b, window.b, this.b); // 4 4 4
 ```
-<br>
 
 - **delete 연산자**를 사용하여 전역객체의 프로퍼티를 삭제하고자 할 때
 전역객체의 프로퍼티로 할당한 경우에만 삭제가 되고
@@ -64,7 +63,7 @@ configurable속성(변경삭제 가능성)을 false 로 정의하기 때문에 �
 
 this 에는 호출한 주체에 대한 정보가 담긴다
 
-<img src="https://user-images.githubusercontent.com/107349637/209519318-78b39568-e134-4dbf-9989-605fdcf40a2e.jpg" width="350"/>
+<img src="https://user-images.githubusercontent.com/107349637/209519318-78b39568-e134-4dbf-9989-605fdcf40a2e.jpg" width="300"/>
 
     ⇒ 함수를 호출할 때 함수 이름 앞에 점 또는 대괄호 표기가 있고 객체가 명시돼 있으면 메서드로 호출한 것
 
@@ -82,7 +81,6 @@ this 가 지정되어 있지 않기 때문에 일반 함수 호출에서 this �
     ⇒ 호출할 때 함수명 앞에 점(.) 이 있으면 메서드로 호출한 것이므로
       점 앞의 객체가 this에 바인딩 되고, 없으면 전역객체를 가리키는 것이다
 
-<br>
 
 #### 내부함수에서 (전역객체를 가리키는)this를 우회하는 방법
 
@@ -92,7 +90,6 @@ this 가 지정되어 있지 않기 때문에 일반 함수 호출에서 this �
 
     ⇒ 상위 스코프에서 var self = this; 를 저장하고,내부함수에서 변수 self를 호출하면 상위 스코프의 this 객체가 출력된다
 
-<br>
 
 #### (2) 화살표함수 사용
 
@@ -102,7 +99,6 @@ this 가 지정되어 있지 않기 때문에 일반 함수 호출에서 this �
 
 <img src="https://user-images.githubusercontent.com/107349637/209520277-6630b567-a665-461f-bda6-7e3a50b1c6cb.jpg" width="350"/>
 
-<br>
 
 #### (3) call, apply, bind 메서드 활용하여 명시적으로 this 지정
 
@@ -139,7 +135,6 @@ this 가 지정되어 있지 않기 때문에 일반 함수 호출에서 this �
 2. apply 메서드 (첫번째 인자 : this, 두번째 인자 : 배열→ 매개변수)
 3. bind 메서드 (첫번째 인자 : this, 인수…)
 
-<br>
 
 #### (1) call 메서드
 
@@ -147,7 +142,7 @@ this 가 지정되어 있지 않기 때문에 일반 함수 호출에서 this �
 
 이때 **첫번째 인자 ⇒ this 바인딩** / 나머지 인자 ⇒ 호출할 함수의 매개변수 로 지정
 
-<img src="https://user-images.githubusercontent.com/107349637/209520728-022d2f09-585b-4271-9d7d-afef7e1dd3ea.jpg" width="350"/>
+<img src="https://user-images.githubusercontent.com/107349637/209520728-022d2f09-585b-4271-9d7d-afef7e1dd3ea.jpg" width="300"/>
 <br>
 
 #### (2) apply 메서드
@@ -170,18 +165,17 @@ call, apply 처럼 바로 함수를 호출하지않고 넘겨받은 this 와 인
 
     원본 함수 (this = 전역객체 / 매개변수를 부분적용할 수 없다 / 함수명 앞에 접두사가 붙지 않는다
 
-<br>
 
 <img src="https://user-images.githubusercontent.com/107349637/209521097-4eabfa97-3ae5-4d23-9889-9c5bad926a19.jpg" width="350"/>
 
     ⇒ 기존 bind 메서드를 호출할 때 전달했던 ❶ 인수들 뒤에 이어서 ❷ 인수를 적용한다
-    
+
     ⇒ name 프로퍼티에 접두사 ‘bound’가 붙는 성질이 있다 ( = 원본 함수에 bind 메서드를 적용한 새로운 함수라는 의미 )
 
 
 #### (4) 메서드를 사용하여 내부함수에 this전달하는 방법
 
-<img src="https://user-images.githubusercontent.com/107349637/209521233-3d12b6da-e1d6-40cb-ab44-c01107b602bd.jpg" width="350"/>
+<img src="https://user-images.githubusercontent.com/107349637/209521233-3d12b6da-e1d6-40cb-ab44-c01107b602bd.jpg" width="300"/>
 
 #### (5) call, apply 메서드의 활용
 
