@@ -1,7 +1,7 @@
 ## 1. 데이터타입
 
 ### 1-1. 데이터타입의 종류
-![Untitled (2)](https://user-images.githubusercontent.com/107349637/209169000-419d18d6-1907-4c8c-96c4-09ef2b9435b8.png)
+<p align="center"><img src="https://user-images.githubusercontent.com/107349637/209169000-419d18d6-1907-4c8c-96c4-09ef2b9435b8.png" width="600"/></p>
 
 ### 1-2. 데이터 타입에 관한 배경지식
 - 컴퓨터는 0과 1로 이루어진 기계어만 이해할 수 있기때문에 (이진법) 프로그래밍 언어가 필요하다
