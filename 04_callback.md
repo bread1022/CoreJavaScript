@@ -206,7 +206,7 @@ Promise 생성자 함수는 비동기 처리를 수행할 콜백함수를 인수
 ⇒ “완료되면 통보해, 콜백은 내가 실행하는걸로 약속할게 Promise”
 
 
-<img src="https://user-images.githubusercontent.com/107349637/209607804-9e800fb6-9301-43fd-a167-5b5224b959b8.png" width="400"/>
+<p align="center"><img src="https://user-images.githubusercontent.com/107349637/209607804-9e800fb6-9301-43fd-a167-5b5224b959b8.png" width="600"/></p>
 
 	프로미스의 상태는 resolve 또는 reject 함수를 호출하는 것으로 결정되고
 	프로미스는 비동기 처리상태와 처리결과를 관리하는 객체이다
