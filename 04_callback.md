@@ -89,11 +89,11 @@ function second() {
 	```
 
       	- callback: function(acc, cur, curIndex, array)
-      			4. accumulator : 콜백 반환값을 누적
-      			5. currentValue : 처리할 현재 요소
-      			6. currentIndex : 처리할 현재 요소의 인덱스
+      			1. accumulator : 콜백 반환값을 누적
+      			2. currentValue : 처리할 현재 요소
+      			3. currentIndex : 처리할 현재 요소의 인덱스
       			(initialValue가 없는 경우 1부터 시작, 제공한 경우 0)
-      			7. array : reduce()를 호출한 배열
+      			4. array : reduce()를 호출한 배열
 
 2. DOM 의 **addEventListener** → 버튼을 누르면 ? 코드를 실행
 
@@ -278,9 +278,9 @@ const promise = new Promise((resolve, reject) => {
 		```js
 		const foo = async () => {
 		  try {
-			  const response = await fetch(URL);
+			 const response = await fetch(URL);
 		  } catch (err) {
-			  console.error(err);
+			 console.error(err);
 		  }
 		}
 
@@ -305,11 +305,11 @@ async키워드를 사용해 정의하며 반환값을 resolve하는 프로미스
 ```js
 async function bar() {
 
-	//처리 순서 상관없이 개별적으로 수행되는 비동기처리이므로 대기가 필요없을 때
+  //처리 순서 상관없이 개별적으로 수행되는 비동기처리이므로 대기가 필요없을 때
   const resol = await Promise.all([
-	  new Promise(resolve => setTimeout(() => resolve(1), 3000)),
-	  new Promise(resolve => setTimeout(() => resolve(2), 2000)),
-	  new Promise(resolve => setTimeout(() => resolve(3), 1000))
+	 new Promise(resolve => setTimeout(() => resolve(1), 3000)),
+	 new Promise(resolve => setTimeout(() => resolve(2), 2000)),
+	 new Promise(resolve => setTimeout(() => resolve(3), 1000))
 ]);
 
   console.log(resol);   //[1,2,3]
