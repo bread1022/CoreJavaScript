@@ -205,7 +205,8 @@ Promise 생성자 함수는 비동기 처리를 수행할 콜백함수를 인수
 
 ⇒ “완료되면 통보해, 콜백은 내가 실행하는걸로 약속할게 Promise”
 
-![Untitled (6)](https://user-images.githubusercontent.com/107349637/209607804-9e800fb6-9301-43fd-a167-5b5224b959b8.png)
+
+<img src="https://user-images.githubusercontent.com/107349637/209607804-9e800fb6-9301-43fd-a167-5b5224b959b8.png" width="400"/>
 
 	프로미스의 상태는 resolve 또는 reject 함수를 호출하는 것으로 결정되고
 	프로미스는 비동기 처리상태와 처리결과를 관리하는 객체이다
@@ -363,5 +364,6 @@ const obj = {
 
 **특징** : 제너레이터 함수를 호출하면 제너레이터객체를 생성해 반환
 
-- 제너레이터 객체 : Symbol.iterator메서드를 상속받는 이터러블이면서
+**제너레이터 객체** : Symbol.iterator메서드를 상속받는 이터러블이면서
+
 value, done 프로퍼티를 갖는 이터레이터 리절트 객체를 반환하는 next 메서드를 소유하는 이터레이터이다
