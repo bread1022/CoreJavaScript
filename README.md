@@ -12,6 +12,6 @@
 
 4장. [콜백함수](https://github.com/bread1022/CoreJavaScript/blob/master/04_callback.md)
 
-5장. 클로저
+5장. [클로저](https://github.com/bread1022/CoreJavaScript/blob/master/05_closure.md)
 
 6장. 프로토타입
