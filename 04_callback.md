@@ -17,7 +17,7 @@
 ```js
 function 함수1(parameter_함수) {
   //함수의 파라미터로 함수를 넣어, 비동기 작업이 가능
-	parameter_함수();
+  parameter_함수();
 }
 
 함수1( function() {	console.log(2);} );
@@ -25,11 +25,11 @@ function 함수1(parameter_함수) {
 
 ```js
 function 함수1(parameter_함수) {
-	parameter_함수();
+  parameter_함수();
 }
 
 function second() {
-	console.log(2);
+  console.log(2);
 };
 
 함수1(second);
@@ -37,13 +37,13 @@ function second() {
 
 ```js
 function 함수1(parameter_함수) {
-	console.log(1);
+  console.log(1);
   //1 출력 후, 함수 실행하고 싶을 때 인자에 원하는 함수를 넣는다
-	parameter_함수();
+  parameter_함수();
 }
 
 function second() {
-	console.log(2);
+  console.log(2);
 };
 
 함수1(second);
@@ -60,7 +60,6 @@ function second() {
 
 	```js
 	Array.map(callback(currentValue[, index[, array]])[, thisArg])
-
 	Array.forEach(callback(currentvalue[, index[, array]])[, thisArg])
 	```
 
@@ -76,7 +75,6 @@ function second() {
 
 	```js
 	Array.filter(callback(element[, index[, array]])[, thisArg])
-
 	Array.find(callback(element[, index[, array]])[, thisArg])
 	```
       	- callback : function(element, index, array)
@@ -127,10 +125,10 @@ function second() {
 
 ```js
 var obj = {
-	element : [1, 2, 3],
-	func : function(v, i) {
-		console.log(this, v, i);
-	}
+  element : [1, 2, 3],
+  func : function(v, i) {
+    console.log(this, v, i);
+  }
 };
 
 obj.func(1, 2);  // {element: Array(3), func: ƒ} 1 2  => this = obj객체
@@ -148,15 +146,15 @@ obj.func(1, 2);  // {element: Array(3), func: ƒ} 1 2  => this = obj객체
 <전통방식>
 
 var obj1 = {
-	name : 'obj1',
-	func : function() {
+  name : 'obj1',
+  func : function() {
 
-		var self = this;  //변수에 this 담기
-	
-		return function() {
-			console.log(self.name);
-		}
-	}
+    var self = this;  //변수에 this 담기
+
+    return function() {
+      console.log(self.name);
+    }
+  }
 }
 
 var callback = obj1.func();
@@ -167,10 +165,10 @@ setTimeout(callback, 1000);   // 1초 후 -> obj1
 <bind 메서드>
 
 var obj1 = {
-	name : 'obj1',
-	func : function() {
-		console.log(this.name);
-	}
+  name : 'obj1',
+  func : function() {
+    console.log(this.name);
+  }
 };
 
 setTimeout(obj1.func.bind(obj1), 1000); //첫번째 인자를 this binding
@@ -214,10 +212,10 @@ Promise 생성자 함수는 비동기 처리를 수행할 콜백함수를 인수
 ```js
 const promise = new Promise((resolve, reject) => {
 
-	//Promise 생성자 함수의 콜백함수 내부에서 비동기 처리를 수행
+  //Promise 생성자 함수의 콜백함수 내부에서 비동기 처리를 수행
 
-	if(비동기 처리 성공 시) { resolve('result'); } //성공시 콜백함수 인수로 전달받은 resolve 함수를 호출하고
-	else { 비동기 처리 실패 시 reject('error'); } //실패시 reject 함수를 호출
+  if(비동기 처리 성공 시) { resolve('result'); } //성공시 콜백함수 인수로 전달받은 resolve 함수를 호출하고
+  else { 비동기 처리 실패 시 reject('error'); } //실패시 reject 함수를 호출
 
 });
 ```
@@ -279,11 +277,11 @@ const promise = new Promise((resolve, reject) => {
 
 		```js
 		const foo = async () => {
-			try {
-				const response = await fetch(URL);
-			} catch (err) {
-				console.error(err);
-			}
+		  try {
+			  const response = await fetch(URL);
+		  } catch (err) {
+			  console.error(err);
+		  }
 		}
 
 		foo();
@@ -293,7 +291,7 @@ const promise = new Promise((resolve, reject) => {
 
 		```js
 		const foo = async () => {
-			const response = await fetch(URL);
+		  const response = await fetch(URL);
 		}
 
 		foo().then().catch(console.error);
@@ -308,13 +306,13 @@ async키워드를 사용해 정의하며 반환값을 resolve하는 프로미스
 async function bar() {
 
 	//처리 순서 상관없이 개별적으로 수행되는 비동기처리이므로 대기가 필요없을 때
-	const resol = await Promise.all([
-		new Promise(resolve => setTimeout(() => resolve(1), 3000)),
-		new Promise(resolve => setTimeout(() => resolve(2), 2000)),
-		new Promise(resolve => setTimeout(() => resolve(3), 1000))
+  const resol = await Promise.all([
+	  new Promise(resolve => setTimeout(() => resolve(1), 3000)),
+	  new Promise(resolve => setTimeout(() => resolve(2), 2000)),
+	  new Promise(resolve => setTimeout(() => resolve(3), 1000))
 ]);
 
-	console.log(resol);   //[1,2,3]
+  console.log(resol);   //[1,2,3]
 }
 
 bar();
@@ -325,12 +323,12 @@ bar();
 
 ```js
 async function bar(n) {
-	const a = await new Promise(resolve => setTimeout(() => resolve(n), 3000));
-	const b = await new Promise(resolve => setTimeout(() => resolve(a+1), 2000));
-	const c = await new Promise(resolve => setTimeout(() => resolve(b+1), 1000));
+  const a = await new Promise(resolve => setTimeout(() => resolve(n), 3000));
+  const b = await new Promise(resolve => setTimeout(() => resolve(a+1), 2000));
+  const c = await new Promise(resolve => setTimeout(() => resolve(b+1), 1000));
 
-	//a 다음 b 다음 c 처리순서가 보장되어야 하므로 모든 프로미스에 await을 써서 순차적으로 처리한다
-	console.log([a,b,c]);  //[1,2,3]
+  //a 다음 b 다음 c 처리순서가 보장되어야 하므로 모든 프로미스에 await을 써서 순차적으로 처리한다
+  console.log([a,b,c]);  //[1,2,3]
 }
 bar(1);
 ```
@@ -346,15 +344,15 @@ bar(1);
 
 ```js
 function* genFunc() {
-	yield 1;
+  yield 1;
 }
 ```
 
 ```js
 const obj = {
-	*genObjMethod() {
-		yield 1;
-	}
+  *genObjMethod() {
+    yield 1;
+  }
 };
 ```
 
