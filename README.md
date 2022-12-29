@@ -14,6 +14,6 @@
 
 5장. [클로저](https://github.com/bread1022/CoreJavaScript/blob/master/05_closure.md)
 
-6장. 프로토타입
+6장. [프로토타입](https://github.com/bread1022/CoreJavaScript/blob/master/06_prototype.md)
 
-7장. 클래스
+7장. [클래스](https://github.com/bread1022/CoreJavaScript/blob/master/07_class.md)
