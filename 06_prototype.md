@@ -42,22 +42,22 @@
 var Person = function(name) {
 
   // new 연산자를 호출하면 새로운 빈 객체가 메모리상 생성되고, 그 빈 객체가 this에 바인딩되어 리턴을 따로하지 않아도 this.name 값이 상속된다
-  this.name = name;  <생성자함수의 속성과 메소드를 정의>
+  this.name = name; // <생성자함수의 속성과 메소드를 정의>
 };
 
 // 2. Person 생성자 함수 prototype 에 getName 메서드를 지정
 Person.prototype.getName = function() {
-  return this.name;
-} // ∴ Person 인스턴스는 __proto__ (프로퍼티)를 통해 getName메서드를 호출할 수 있다
+  return this.name; // ∴ Person 인스턴스는 __proto__ (프로퍼티)를 통해 getName메서드를 호출할 수 있다
+}
 
 
-var suzi = new Person('suzi'); <인스턴스 생성>
+var suzi = new Person('suzi'); // <인스턴스 생성>
 suzi.__proto__.getName(); // undefined => getName()가 메서드로 호출됐을 때의 this = 메서드명 바로 앞 객체 (suzi.__proto__)
 
 console.log(suzi.__proto__);  // {getName: ƒ, constructor: ƒ}
 console.log(Person.prototype); // {getName: ƒ, constructor: ƒ}
 
-suzi.getName();  // 'suzi' => 인스턴스에서 __proto__객체를 생략하고 바로 메서드를 호출가능! this = instance (JS에서 생략가능한 프로퍼티로 정의했기 때문)
+suzi.getName(); // 'suzi' => 인스턴스에서 __proto__객체를 생략하고 바로 메서드를 호출가능! this = instance (JS에서 생략가능한 프로퍼티로 정의했기 때문)
 ```
     ⇒ prototype객체를 참조하는 __proto__ 를 생략하면
     인스턴스는 prototype에 정의된 프로퍼티나 메서드를 자신의 것처럼 사용할 수 있다
@@ -74,10 +74,9 @@ var Constructor = function(name) {
 Constructor.prototype.method1 = function() {};
 Constructor.prototype.property1 = 'Constructor 프로토타입 프로퍼티';
 
-var instance = new Constructor('인스턴스');  // new연산자와 함께 인스턴스를 생성
+var instance = new Constructor('인스턴스');  // new 연산자와 함께 인스턴스를 생성
 
 console.dir(Constructor);
-
 console.dir(instance);
 ```
 
@@ -103,7 +102,6 @@ console.dir(Array);
 <p align="center"><img src="https://user-images.githubusercontent.com/107349637/209902076-88fd0026-a0a4-4962-a123-f49954b77193.png" width="600"/></p>
 
     → new 연산자와 함께 Array 호출하면 인스턴스[1, 2] 가 생성되고 그 인스턴스의 __ proto __ 는 Array.prototype을 참조한다
-
     ⇒ Array.prototype 내 메서드를 인스턴스가 자신의 것처럼 사용이 가능하고, 프로토타입 프로퍼티 내부에 있지 않은 메서드들은 직접 호출할 수 없다
 
 <br>
@@ -204,7 +202,9 @@ var p5 = new p1Proto.constructor('사람5');
 <br>
 
 > 프로토타입 체인이란
+>
 > 프로토타입 객체 상위의 프로토타입 객체로부터 속성과 메서드를 상속받고,
+> 
 > 또 그 상위 프로토타입 객체로부터 상속 받을 수 있도록 하는 것
 
 <br>
@@ -241,7 +241,7 @@ chris.sayHello(); //chris:hello
     - 프로토타입체이닝이 발생 ⇒ 프로토타입링크를 따라 프로토타입을 탐색해나가는 과정
     - chris.sayHello(); 는 chris객체에서 먼저 sayHello( )메서드를 탐색
     → 없으면 Person’s prototype 객체로 이동하여 sayHello( ) 를 탐색
-    → 없으면 Person 생성자함수의 prototype 객체로 이동하여 탐색
+    → 또 없으면 Person 생성자함수의 prototype 객체로 이동하여 탐색
     → 원하는 값을 찾으면 검색을 중단
 
 <br>
@@ -249,7 +249,7 @@ chris.sayHello(); //chris:hello
 #### (1) 메서드 오버라이드
 
 ```js
-( 생성자함수의 메서드와 인스턴스의 메서드 이름이 동일할 경우 )
+(생성자함수의 메서드와 인스턴스의 메서드 이름이 동일할 경우를 나타내는 예시)
 
 var Person = function(name) {
   this.name = name;
