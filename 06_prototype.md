@@ -7,9 +7,9 @@
 
 
 > 프로토타입 기반 언어란,
-> 
+>
 > 객체들이 속성과, 메서드들을 상속받기 위한
-> 
+>
 > 템플릿으로써 프로토타입 객체 (prototype object)를 가진다는 의미이다
 
 <br>
@@ -18,13 +18,9 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/107349637/209900893-610d4491-49f0-4759-b5db-c52be43b3293.png" width="600"/></p>
 
-프로토타입 (= 객체) 내부에는 메서드가 저장되고,
+프로토타입 (= 객체) 내부에는 메서드가 저장되고, 인스턴스의 __ proto__ 프로퍼티(속성)를 통해 메서드에 접근하게 한다
 
-인스턴스의 __ proto__ 프로퍼티(속성)를 통해 메서드에 접근하게 한다
-
-> 상속되는 속성과 메서드들은 각 객체가 아니라,
-> 
-> 객체의 생성자의 prototype (속성)에 정의되어 있다
+> 상속되는 속성과 메서드들은 각 객체가 아니라, 객체의 생성자의 prototype (속성)에 정의되어 있다
 
 > 프로토타입 객체 : __ proto __ 속성으로 접근 가능한 내장 객체이다
 
@@ -102,7 +98,7 @@ console.dir(arr);
 console.dir(Array);
 ```
 
-<p align="center"><img src="https://user-images.githubusercontent.com/107349637/209902076-88fd0026-a0a4-4962-a123-f49954b77193.png" width="600"/></p>
+![Untitled (9)](https://user-images.githubusercontent.com/107349637/210026078-d26afd6d-f884-4fa5-89ce-27e3afa09c3a.png)
 
     → new 연산자와 함께 Array 호출하면 인스턴스[1, 2] 가 생성되고 그 인스턴스의 __ proto __ 는 Array.prototype을 참조한다
     ⇒ Array.prototype 내 메서드를 인스턴스가 자신의 것처럼 사용이 가능하고, 프로토타입 프로퍼티 내부에 있지 않은 메서드들은 직접 호출할 수 없다
@@ -202,12 +198,10 @@ var p5 = new p1Proto.constructor('사람5');
 
 ### 프로토타입 체이닝
 
-<br>
-
 > 프로토타입 체인이란
 >
 > 프로토타입 객체 상위의 프로토타입 객체로부터 속성과 메서드를 상속받고,
-> 
+>
 > 또 그 상위 프로토타입 객체로부터 상속 받을 수 있도록 하는 것
 
 <br>
@@ -243,9 +237,9 @@ chris.sayHello(); //chris:hello
 
     - 프로토타입체이닝이 발생 ⇒ 프로토타입링크를 따라 프로토타입을 탐색해나가는 과정
     - chris.sayHello(); 는 chris객체에서 먼저 sayHello( )메서드를 탐색
-    → 없으면 Person’s prototype 객체로 이동하여 sayHello( ) 를 탐색
-    → 또 없으면 Person 생성자함수의 prototype 객체로 이동하여 탐색
-    → 원하는 값을 찾으면 검색을 중단
+      → 없으면 Person’s prototype 객체로 이동하여 sayHello( ) 를 탐색
+      → 또 없으면 Person 생성자함수의 prototype 객체로 이동하여 탐색
+      → 원하는 값을 찾으면 검색을 중단
 
 <br>
 
@@ -272,8 +266,7 @@ console.log(iu.getName());
 
     메서드명이 동일하여 메서드 위에 메서드를 덮어 씌웠다 (원본 변경X)
     → iu.__proto__.getName 이 아닌 iu객체의 getName메서드가 호출된다
-    → JS에서는 getName메서드를 가장 가까운 대상인 iu객체 자신의 프로퍼티를 탐색하고,
-        없으면 그 다음 대상 __proto__를 탐색하는 순서로 진행된다
+    → JS에서는 getName메서드를 가장 가까운 대상인 iu객체 자신의 프로퍼티를 탐색하고, 없으면 그 다음 대상 __proto__를 탐색하는 순서로 진행된다
 
 <br>
 
@@ -334,7 +327,3 @@ console.log(person2);  // Person {}
 
 </div>
 </details>
-
-<br>
-
-#### (4) 다중 프로토타입 체인
