@@ -30,10 +30,7 @@ JS 프로토타입기반 언어이기 때문에 상속의 개념이 존재하지
 ### 7-2. 자바스크립트의 클래스
 
 ```js
-// 생성자 함수 Array
-const arr = new Array;
-
-// new 연산자와 함께 Array 생성자함수를 호출하여 Array인스턴스를 생성하고 이를 arr에 할당
+const arr = new Array; // new 연산자와 함께 Array 생성자함수를 호출하여 Array인스턴스를 생성하고 이를 arr에 할당
 ```
 
 <p><img src="https://user-images.githubusercontent.com/107349637/210022553-f9e82bc2-0d89-49ed-9400-5b62ef073056.png" width="400"/></p>
@@ -145,9 +142,10 @@ console.log(rect2); // Rectangle {width: 2, height: 3} -> Square의 인스턴�
     - 하위클래스로 삼을 생성자 함수의 prototype에 상위클래스의 인스턴스를 부여하여  메서드 상속을 할 순 있지만 다양한 문제가 발생할 수 있다
 
 - 7-3-2. 클래스 상속 및 추상화 방법 (클래스가 구체적인 데이터를 지니지 않게 하는 방법)
-(1) 인스턴스 생성 후 프로퍼티 제거
-(2) 빈 함수 활용
-(3) Object.create 활용
+  1. 인스턴스 생성 후 프로퍼티 제거
+  2. 빈 함수 활용
+  3. Object.create 활용
+   
 <br>
 
 
