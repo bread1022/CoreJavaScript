@@ -6,15 +6,15 @@
 어떤 객체를 **prototype**(원형)삼고 이를 **참조**(복제)함으로써 상속과 비슷한 효과를 낸다
 
 
+> 
 > 프로토타입 기반 언어란,
->
 > 객체들이 속성과, 메서드들을 상속받기 위한
->
 > 템플릿으로써 프로토타입 객체 (prototype object)를 가진다는 의미이다
+> 
 
 <br>
 
-### 프로토타입의 핵심 관계
+## 프로토타입의 핵심 관계
 
 <p align="center"><img src="https://user-images.githubusercontent.com/107349637/209900893-610d4491-49f0-4759-b5db-c52be43b3293.png" width="600"/></p>
 
@@ -106,7 +106,7 @@ console.dir(Array);
 <br>
 <br>
 
-### Constructor 프로퍼티
+## Constructor 프로퍼티
 
 생성자함수의 프로퍼티인 **prototype 객체 내부**와
 **인스턴스 __ proto __ 객체 내부**에는 Constructor (프로퍼티)가 있다
@@ -196,7 +196,7 @@ var p5 = new p1Proto.constructor('사람5');
 <br>
 <br>
 
-### 프로토타입 체이닝
+## 프로토타입 체이닝
 
 > 프로토타입 체인이란
 >
@@ -243,7 +243,7 @@ chris.sayHello(); //chris:hello
 
 <br>
 
-#### (1) 메서드 오버라이드
+### (1) 메서드 오버라이드
 
 ```js
 (생성자함수의 메서드와 인스턴스의 메서드 이름이 동일할 경우를 나타내는 예시)
@@ -270,7 +270,7 @@ console.log(iu.getName());
 
 <br>
 
-#### (2) 프로토타입 체인
+### (2) 프로토타입 체인
 
 프로토타입은 데이터 타입이 객체이기 때문에 Object.prototype이 객체의 __proto__ 에 연결되고
 
@@ -291,7 +291,7 @@ console.dir(arr);
 
 <br>
 
-#### (3) 객체 전용 메서드의 예외사항
+### (3) 객체 전용 메서드의 예외사항
 
 - 어떤 생성자 함수든 prototype 은 객체이기 때문에 Object.prototype을 프로토타입 체인 최상단에 위치시킨다
 - 객체에서만 사용할 메서드는 프로토타입 객체안에 정의할 수 없다
