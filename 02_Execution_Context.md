@@ -10,11 +10,7 @@
 
 - 실행컨텍스트 객체는 **활성화** 되는 시점에서
 
-    ①VariableEnvironment(VE)
-
-    ②LexicalEnvironment(LE)
-
-    ③ThisBinding 의 정보를 수집
+    ①VariableEnvironment(VE), ②LexicalEnvironment(LE), ③ThisBinding 의 정보를 수집
 <br>
 
 - 실행컨텍스트를 생성 초기에
@@ -46,7 +42,7 @@ VariableEnvironment 와 LexicalEnvironment 는 하나의 동일한 렉시컬환�
 
 ⇒ 식별자와 스코프를 관리
 
-<p align="center"><img src="https://user-images.githubusercontent.com/107349637/209531135-66d575f9-17ac-4c8a-9323-f771c6a12026.png" width="500"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/107349637/210174281-9e4c7555-fc7e-4ca7-99ff-b765ffe78608.png" width="500"/></p>
 
     식별자를 Key로 등록하고 식별자에 바인딩된 값을 관리
     ⇒ 렉시컬환경은 스코프를 구분하여 식별자를 등록하고 관리하는 저장소 역할
